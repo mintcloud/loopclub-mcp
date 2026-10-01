@@ -2,7 +2,7 @@
 
 **Jam with Claude.** An [MCP](https://modelcontextprotocol.io) server that turns
 a described beat into a [loopclub](https://loopclub.xyz) link — ready to audition
-and rent on-chain. It is a **pure encoder over [`loopgen`](../loopgen)**: it holds
+and rent on-chain. It is a **pure encoder over [`loopgen`](https://github.com/mintcloud/loopclub/tree/main/loopgen)**: it holds
 no keys, talks to no chain, and signs nothing. Your Claude does the musical
 thinking and calls `build_loop`; the server bit-packs it and returns a `?jam=`
 deep link. You open the link, audition the loop free, and rent the cells
@@ -113,12 +113,13 @@ Config (env, all optional):
 ## Develop
 
 ```bash
-npm install          # links ../loopgen via file: (build loopgen first)
+npm install          # pulls loopclub-loopgen from npm
 npm test             # vitest — handler logic + loopgen round-trip
 node scripts/smoke.mjs   # end-to-end: spawns the server, drives real JSON-RPC
 npm run build        # tsc → dist/ (bin: loopclub-mcp)
 ```
 
-> `loopgen` is consumed via `file:../loopgen` while the repo has no workspace
-> wiring. When the monorepo is rearchitected, this can become a workspace
-> dependency with no code change (see `../loopgen/README.md`).
+> `loopgen` — the musical codec this server encodes with — is published
+> separately as [`loopclub-loopgen`](https://www.npmjs.com/package/loopclub-loopgen)
+> and developed in the [loopclub monorepo](https://github.com/mintcloud/loopclub/tree/main/loopgen).
+> A change to the on-chain wire format means a new `loopgen` release and a bump here.
