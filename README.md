@@ -1,5 +1,9 @@
 # loopclub-mcp
 
+[![npm](https://img.shields.io/npm/v/loopclub-mcp?color=cb3837&logo=npm)](https://www.npmjs.com/package/loopclub-mcp)
+[![license](https://img.shields.io/npm/l/loopclub-mcp?color=blue)](./LICENSE)
+[![MCP](https://img.shields.io/badge/MCP-server-5a3fc0)](https://modelcontextprotocol.io)
+
 **Jam with Claude.** An [MCP](https://modelcontextprotocol.io) server that turns
 a described beat into a [loopclub](https://loopclub.xyz) link — ready to audition
 and rent on-chain. It is a **pure encoder over [`loopgen`](https://github.com/mintcloud/loopclub/tree/main/loopgen)**: it holds
@@ -19,6 +23,8 @@ yourself in the app.
 ```
 
 ## Install
+
+Published on npm as [`loopclub-mcp`](https://www.npmjs.com/package/loopclub-mcp) — no clone needed, `npx` fetches it.
 
 **Claude Code:**
 ```bash
